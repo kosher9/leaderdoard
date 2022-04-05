@@ -1,3 +1,52 @@
 .body {
   background-color: #f5f5f5;
 }
+
+.ctn-leaderboard {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.ctn-left {
+  width: 45%;
+}
+
+.ctn-right {
+  width: 45%;
+}
+
+.table-score {
+  border: 2px solid rgb(20, 19, 19);
+  width: 100%;
+}
+.table-score td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.table-score tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.table-score tr:hover {
+  background-color: #ddd;
+}
+
+.add-score {
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: 20px;
+}
+
+.input-text {
+  width: 80%;
+}
+
+.input-button {
+  width: fit-content;
+}

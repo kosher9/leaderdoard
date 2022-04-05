@@ -8,49 +8,53 @@
     <meta name="description" content="Leaderboard">
     <meta name="keywords" content="HTML, CSS">
     <meta name="author" content="Cedric KOSSI">
+    <style></style>
     <title>Document</title>
 </head>
 
 <body>
     <h1>Leaderboard</h1>
-    <div class="ctn-left">
-        <div>
-            <h2>Recent scores</h2>
-            <button>Refresh</button>
+    <div class="ctn-leaderboard">
+        <div class="ctn-left">
+            <div>
+                <h2>Recent scores</h2>
+                <button>Refresh</button>
+            </div>
+            <table class="table-score">
+                <tr>
+                    <td>Name: 100</td>
+                </tr>
+                <tr>
+                    <td>Name: 20</td>
+                </tr>
+                <tr>
+                    <td>Name: 50</td>
+                </tr>
+                <tr>
+                    <td>Name: 78</td>
+                </tr>
+                <tr>
+                    <td>Name: 125</td>
+                </tr>
+                <tr>
+                    <td>Name: 77</td>
+                </tr>
+                <tr>
+                    <td>Name: 42</td>
+                </tr>
+            </table>
         </div>
-        <table>
-            <tr>
-                <td>Name: 100</td>
-            </tr>
-            <tr>
-                <td>Name: 20</td>
-            </tr>
-            <tr>
-                <td>Name: 50</td>
-            </tr>
-            <tr>
-                <td>Name: 78</td>
-            </tr>
-            <tr>
-                <td>Name: 125</td>
-            </tr>
-            <tr>
-                <td>Name: 77</td>
-            </tr>
-            <tr>
-                <td>Name: 42</td>
-            </tr>
-        </table>
+
+        <div class="ctn-right">
+            <h2 class="add-score">Add your score</h2>
+            <div class="form">
+                <input class="input-text" type="text">
+                <input class="input-text" type="number">
+                <input class="input-button" type="submit">
+            </div>
+        </div>
     </div>
 
-    <div class="ctn-right">
-        <h2>Add your score</h2>
-        <div>
-            <input type="text">
-            <input type="number">
-            <input type="submit">
-        </div>
-    </div>
 </body>
 
 </html>

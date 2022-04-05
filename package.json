@@ -1,0 +1,22 @@
+{
+  "name": "leaderdoard",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "jest --coverage",
+    "start": "webpack serve --open",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kosher9/leaderdoard.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kosher9/leaderdoard/issues"
+  },
+  "homepage": "https://github.com/kosher9/leaderdoard#readme"
+}

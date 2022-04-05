@@ -18,5 +18,13 @@
   "bugs": {
     "url": "https://github.com/kosher9/leaderdoard/issues"
   },
-  "homepage": "https://github.com/kosher9/leaderdoard#readme"
+  "homepage": "https://github.com/kosher9/leaderdoard#readme",
+  "devDependencies": {
+    "css-loader": "^6.7.1",
+    "html-webpack-plugin": "^5.5.0",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.71.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.7.4"
+  }
 }

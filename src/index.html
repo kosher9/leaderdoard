@@ -48,9 +48,11 @@
         <div class="ctn-right">
             <h2 class="add-score">Add your score</h2>
             <div class="form">
-                <input class="input-text" type="text">
-                <input class="input-text" type="number">
-                <input class="input-button" type="submit">
+                <form action="" method="post">
+                    <input id="name" class="input-text" type="text" name="name" required placeholder="name">
+                    <input id="score" class="input-text" type="number" name="score" required placeholder="score">
+                    <input id="submit"class="input-button" type="submit">
+                </form>
             </div>
         </div>
     </div>

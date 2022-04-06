@@ -8,11 +8,11 @@ const BASE_URL = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api
 
 const GAME_ID = '0wmZGRhOtcZ3YyoWhvRi';
 
-async function getScores() {
+const getScores = async () => {
   const response = await fetch(`${BASE_URL}games/${GAME_ID}/scores/`);
   const data = await response.json();
   return data;
-}
+};
 
 const refreshTable = () => {
   table.innerHTML = '';
@@ -28,7 +28,7 @@ const refreshTable = () => {
   });
 };
 
-async function addScore(newScore) {
+const addScore = async (newScore) => {
   const response = await fetch(`${BASE_URL}games/${GAME_ID}/scores/`, {
     method: 'POST',
     headers: {
@@ -39,7 +39,7 @@ async function addScore(newScore) {
   const data = await response.json();
   refreshTable();
   return data;
-}
+};
 
 const createScore = () => {
   const newScore = {

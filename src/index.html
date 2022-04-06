@@ -18,42 +18,24 @@
         <div class="ctn-left">
             <div class="ctn-refresh">
                 <h2>Recent scores</h2>
-                <button class="refresh">Refresh</button>
+                <button id="refresh" class="refresh">Refresh</button>
             </div>
-            <table class="table-score">
-                <tr>
+            <table id="table" class="table-score">
+                <!-- <tr>
                     <td>Name: 100</td>
-                </tr>
-                <tr>
-                    <td>Name: 20</td>
-                </tr>
-                <tr>
-                    <td>Name: 50</td>
-                </tr>
-                <tr>
-                    <td>Name: 78</td>
-                </tr>
-                <tr>
-                    <td>Name: 125</td>
-                </tr>
-                <tr>
-                    <td>Name: 77</td>
-                </tr>
-                <tr>
-                    <td>Name: 42</td>
-                </tr>
+                </tr> -->
+
             </table>
         </div>
 
         <div class="ctn-right">
             <h2 class="add-score">Add your score</h2>
-            <div class="form">
-                <form action="" method="post">
-                    <input id="name" class="input-text" type="text" name="name" required placeholder="name">
-                    <input id="score" class="input-text" type="number" name="score" required placeholder="score">
-                    <input id="submit"class="input-button" type="submit">
-                </form>
-            </div>
+            <form class="form" method="post"
+                action="https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/0wmZGRhOtcZ3YyoWhvRi/scores/">
+                <input id="name" class="input-text" type="text" name="user" required placeholder="name">
+                <input id="score" class="input-text" type="number" name="score" required placeholder="score">
+                <input id="submit" class="input-button" type="submit" name="sunmit">
+            </form>
         </div>
     </div>
 

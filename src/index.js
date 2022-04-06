@@ -1,11 +1,12 @@
 import './style.css';
 
-const submit = document.getElementById('submit');
+const form = document.querySelector('form');
+const refreshButton = document.getElementById('refresh');
+const table = document.getElementById('table');
 
-const BASE_URL =
-  'https://us-central1-js-capstone-backend.cloudfunctions.net/api/';
+const BASE_URL = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/';
 
-const GAME_ID = 'tGWxFm1MB0fo61SZBYFF';
+const GAME_ID = '0wmZGRhOtcZ3YyoWhvRi';
 
 async function getScores() {
   const response = await fetch(`${BASE_URL}games/${GAME_ID}/scores/`);
@@ -13,8 +14,22 @@ async function getScores() {
   return data;
 }
 
+const refreshTable = () => {
+  table.innerHTML = '';
+  const trContainer = document.createElement('tr');
+  const users = [];
+  getScores().then((games) => {
+    Object.entries(games.result).forEach(([, value]) => {
+      users.push(JSON.stringify(value));
+      trContainer.innerHTML = `
+        <td>${value.user}: ${value.score}</td>`;
+      table.innerHTML += trContainer.innerHTML;
+    });
+  });
+};
+
 async function addScore(newScore) {
-  const response = await fetch(`${BASE_URL}/${GAME_ID}/scores/`, {
+  const response = await fetch(`${BASE_URL}games/${GAME_ID}/scores/`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -22,6 +37,7 @@ async function addScore(newScore) {
     body: JSON.stringify(newScore),
   });
   const data = await response.json();
+  refreshTable();
   return data;
 }
 
@@ -30,20 +46,18 @@ const createScore = () => {
     user: document.getElementById('name').value,
     score: document.getElementById('score').value,
   };
-  addScore(newScore).then((data) => {
-    console.log(data);
-  });
+  document.getElementById('name').value = '';
+  document.getElementById('score').value = '';
+  addScore(newScore);
 };
 
-const feedTable = () => {
-  const users = [];
-  getScores().then((games) => {
-    Object.entries(games.result).forEach(([, value]) => {
-      users.push(JSON.stringify(value));
-    });
-  });
-};
+refreshTable();
 
-submit.addEventListener('click', () => {
+refreshButton.addEventListener('click', () => {
+  refreshTable();
+});
+
+form.addEventListener('submit', (evt) => {
+  evt.preventDefault();
   createScore();
 });

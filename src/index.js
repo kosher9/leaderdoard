@@ -1,29 +1,27 @@
 import './style.css';
+import { BASE_URL, GAME_ID } from './modules/url_config.js';
 
 const form = document.querySelector('form');
 const refreshButton = document.getElementById('refresh');
-const table = document.getElementById('table');
+const table = document.getElementById('ctn-body');
 
-const BASE_URL = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/';
-
-const GAME_ID = '0wmZGRhOtcZ3YyoWhvRi';
-
-const getScores = async () => {
+async function getScores() {
   const response = await fetch(`${BASE_URL}games/${GAME_ID}/scores/`);
   const data = await response.json();
   return data;
-};
+}
 
 const refreshTable = () => {
   table.innerHTML = '';
-  const trContainer = document.createElement('tr');
   const users = [];
   getScores().then((games) => {
     Object.entries(games.result).forEach(([, value]) => {
       users.push(JSON.stringify(value));
+      const trContainer = document.createElement('tr');
       trContainer.innerHTML = `
-        <td>${value.user}: ${value.score}</td>`;
-      table.innerHTML += trContainer.innerHTML;
+        <td>${value.user}</td>
+        <td>${value.score}</td>`;
+      table.appendChild(trContainer);
     });
   });
 };

@@ -1,5 +1,13 @@
-.body {
-  background-color: #f5f5f5;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;500;700&display=swap');
+
+body {
+  background-color: #51035c;
+  font-family: 'Poppins', sans-serif;
+  color: #f173cd;
+  padding-left: 25px;
+  padding-right: 25px;
+  border: 5px solid #be44ca;
+  border-radius: 20px;
 }
 
 .ctn-leaderboard {
@@ -15,10 +23,15 @@
 
 .refresh {
   margin: auto;
+  height: 30px;
+  width: 80px;
+  border: 2px solid #801a75;
+  border-radius: 10px;
 }
 
 .ctn-left {
   width: 45%;
+  padding-left: 10px;
 }
 
 .ctn-right {
@@ -56,8 +69,28 @@
 
 .input-text {
   width: 80%;
+  height: 30px;
+}
+
+.input-text:focus {
+  outline: #fdf7fd;
+}
+
+.refresh:hover {
+  cursor: pointer;
+  background-color: #801a75;
+  color: #f173cd;
 }
 
 .input-button {
-  width: fit-content;
+  height: 30px;
+  width: 80px;
+  border: 2px solid #801a75;
+  border-radius: 10px;
+}
+
+.input-button:hover {
+  cursor: pointer;
+  background-color: #801a75;
+  color: #f173cd;
 }

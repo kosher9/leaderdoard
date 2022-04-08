@@ -21,10 +21,15 @@
                 <button id="refresh" class="refresh">Refresh</button>
             </div>
             <table id="table" class="table-score">
-                <!-- <tr>
-                    <td>Name: 100</td>
-                </tr> -->
+                <thead>
+                    <tr>
+                        <th>User</th>
+                        <th>Score</th>
+                    </tr>
+                </thead>
+                <tbody id="ctn-body">
 
+                </tbody>
             </table>
         </div>
 
@@ -34,7 +39,7 @@
                 action="https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/0wmZGRhOtcZ3YyoWhvRi/scores/">
                 <input id="name" class="input-text" type="text" name="user" required placeholder="name">
                 <input id="score" class="input-text" type="number" name="score" required placeholder="score">
-                <input id="submit" class="input-button" type="submit" name="sunmit">
+                <input id="submit" class="input-button" type="submit" name="submit">
             </form>
         </div>
     </div>
